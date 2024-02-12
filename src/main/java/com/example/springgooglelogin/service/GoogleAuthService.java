@@ -21,7 +21,7 @@ public class GoogleAuthService {
     private String googleTokenUri;
     @Value("${spring.oauth2.google.resource-uri}")
     private String googleResourceUri;
-    public void socialLogin(String code) {
+    public String socialLogin(String code) {
         String accessToken = getAccessToken(code);
         JsonNode userResourceNode = getUserResource(accessToken);
         System.out.println("userResourceNode = " + userResourceNode);
@@ -32,6 +32,9 @@ public class GoogleAuthService {
         System.out.println("id = " + id);
         System.out.println("email = " + email);
         System.out.println("name = " + name);
+        System.out.println("token: " + accessToken);
+
+        return accessToken;
     }
     private String getAccessToken(String authorizationCode) {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();

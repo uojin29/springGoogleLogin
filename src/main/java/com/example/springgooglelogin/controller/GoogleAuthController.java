@@ -12,7 +12,7 @@ public class GoogleAuthController {
     private final GoogleAuthService googleAuthService;
 
     @GetMapping("/code/google")
-    public String googleLogin(@RequestParam String code) {
-        return googleAuthService.socialLogin(code);
+    public void googleLogin(@RequestParam String code) {
+        googleAuthService.socialLogin(code);
     }
 }

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 public class GoogleAuthController {
     private final GoogleAuthService googleAuthService;
 
-    @GetMapping("/code")
-    public void googleLogin(@RequestParam String code) {
-        googleAuthService.socialLogin(code);
+    @GetMapping("/code/google")
+    public String googleLogin(@RequestParam String code) {
+        return googleAuthService.socialLogin(code);
     }
 }

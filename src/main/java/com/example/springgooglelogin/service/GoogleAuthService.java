@@ -1,7 +1,6 @@
 package com.example.springgooglelogin.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -10,7 +9,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class LoginService {
+public class GoogleAuthService {
     private final RestTemplate restTemplate = new RestTemplate();
     @Value("${spring.oauth2.google.client-id}")
     private String googleClientId;
